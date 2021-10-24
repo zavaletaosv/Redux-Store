@@ -6,7 +6,7 @@ State: Redux Store
 
 ## Links
 
-Repository Link:
+Repository Link: https://github.com/zavaletaosv/Redux-Store
 
 Deployed Website Link:
 ## Usage
