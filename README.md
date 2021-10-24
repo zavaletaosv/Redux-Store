@@ -17,6 +17,14 @@ Once deployed, the application appears as the image attached below on a traditio
 src="./assets/1.gif"
 alt="Demo gif of app" />
 
+<img
+src="./assets/2.gif"
+alt="Demo gif of app" />
+
+<img
+src="./assets/3.gif"
+alt="Demo gif of app" />
+
 ## Credits
 
 Collaborations of this project include the instructional staff, TAs, and fellow classmates in the Rice University Coding Bootcamp 2021 Cohort.
