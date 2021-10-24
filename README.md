@@ -8,7 +8,7 @@ This project was meant to refactor code provided for the e-commerce platform to 
 
 Repository Link: https://github.com/zavaletaosv/Redux-Store
 
-Deployed Website Link:
+Deployed Website Link: https://redux-store-oz.herokuapp.com/
 ## Usage
 
 Once deployed, the application appears as the image attached below on a traditional desktop. A link to the video is also added to showcase the application.
