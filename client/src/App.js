@@ -14,33 +14,27 @@ import Nav from './components/Nav';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 
-const httpLink = createHttpLink({
-  uri: '/graphql',
-});
-
-const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  };
-});
-
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  request: (operation) => {
+    const token = localStorage.getItem('id_token')
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : ''
+      }
+    })
+  },
+
+  uri: '/graphql',
 });
 
 function App() {
   return (
     <ApolloProvider client={client}>
-      <BrowserRouter>
+      <Router>
         <div>
-          <StoreProvider>
+          <Provider store = {store}>
             <Nav />
-            <Routes>
+            <Switch>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
@@ -48,10 +42,10 @@ function App() {
               <Route path="/orderHistory" element={<OrderHistory />} />
               <Route path="/products/:id"element={<Detail />} />
               <Route element={<NoMatch />} />
-            </Routes>
-          </StoreProvider>
+            </Switch>
+          </Provider>
         </div>
-      </BrowserRouter>
+      </Router>
     </ApolloProvider>
   );
 }
