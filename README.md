@@ -2,8 +2,8 @@
 State: Redux Store
 
 ## Description
- 
 
+This project was meant to refactor code provided for the e-commerce platform to use Redux.
 ## Links
 
 Repository Link: https://github.com/zavaletaosv/Redux-Store
